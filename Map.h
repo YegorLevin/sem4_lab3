@@ -40,13 +40,15 @@ private:
 	void delete_case5(TreeNode<Key, Value> * current);
 	void delete_case6(TreeNode<Key, Value> * current);
 
+	void print_Tree(TreeNode<Key, Value> * p, int level = 0); // recursive method for output
+
 
 public:
 	Map();
 	~Map();
 
 	void print(); // output tree to the console
-	void print_Tree(TreeNode<Key, Value> * p, int level = 0); // recursive method for output
+
 
 	void insert(Key key, Value value); // adding a node to the tree
 	ListClass<Key> * get_keys();
@@ -519,7 +521,7 @@ void Map<Key, Value>::delete_case2(TreeNode<Key, Value> * current) // brother is
 }
 
 template<class Key, class Value>
-void Map<Key, Value>::delete_case3(TreeNode<Key, Value> * current) //brother is black and brother's children are black
+void Map<Key, Value>::delete_case3(TreeNode<Key, Value> * current) //brother is black and brother's children are black, parent is black
 {
 	TreeNode<Key, Value> * brotherptr = brother(current);
 
